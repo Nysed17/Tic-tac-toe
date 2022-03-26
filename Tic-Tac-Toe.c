@@ -89,11 +89,13 @@ char* matrice(char* a, char *c){
 int main(){
 	
 	system("clear");
+	
 	char mat[3][3] = {{'#','#','#'},
 			  {'#','#','#'},
 		       	  {'#','#','#'}}; // Blank tab
 	char c = 'o';
 	char g = 'x';
+	
 	int gameover = 0;
 		
 	while (gameover != 1){
