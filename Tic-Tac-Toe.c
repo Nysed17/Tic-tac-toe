@@ -10,6 +10,8 @@ void print_mat(char a[3][3]){ // Print of the table
 	}
 }
 
+diomostro
+
 void logic(char* a, char *c, int *gameover){
 	
 	// Horizontal win
