@@ -10,7 +10,7 @@ void print_mat(char a[3][3]){ // Print of the table
 	}
 }
 
-void logica(char* a, char *c, int *gameover){
+void logic(char* a, char *c, int *gameover){
 	
 	// Horizontal win
 	if (a[0] == *c && a[1] == *c && a[2] == *c){
@@ -38,7 +38,7 @@ void logica(char* a, char *c, int *gameover){
 	}
 } 
 
-char* matrice(char* a, char *c){
+char* matrix(char* a, char *c){
 	
 	if (*c == 'x'){  // Char swap
 		*c = 'o';
@@ -46,56 +46,53 @@ char* matrice(char* a, char *c){
 		*c = 'x';
 	}	
 	
-	int rig;
+	int row;
 	int col;
-	printf("Riga:");
-	scanf("%d", &rig);
-	printf("Colonna:");
+	printf("Row:");
+	scanf("%d", &row);
+	printf("Column:");
 	scanf("%d", &col);
 		
 	// Inserting the character into the table
 
-	if (rig <= 3 && col <= 3){
-		if (rig == 1){
-			if (col == 1){
-				a[0] = *c;
-			} else if (col == 2){
-				a[1] = *c;
-			} else if (col == 3){
-				a[2] = *c;
-			}
-		} else if (rig == 2){
-			if (col == 1){
-				a[3] = *c;
-			} else if (col == 2){
-				a[4] = *c;
-			} else if (col == 3){
-				a[5] = *c;
-			}
-		} else if (rig == 3){
-			if (col == 1){
-				a[6] = *c;
-			} else if (col == 2){
-				a[7] = *c;
-			} else if (col == 3){
-				a[8] = *c;
-			}
+	if (row <= 3 && col <= 3){
+	if (row == 1){
+		if (col == 1){
+			a[0] = *c;
+		} else if (col == 2){
+			a[1] = *c;
+		} else if (col == 3){
+			a[2] = *c;
 		}
-	} else matrice(a,c);
+	} else if (row == 2){
+		if (col == 1){
+			a[3] = *c;
+		} else if (col == 2){
+			a[4] = *c;
+		} else if (col == 3){
+			a[5] = *c;
+		}
+	} else if (row == 3){
+		if (col == 1){
+			a[6] = *c;
+		} else if (col == 2){
+			a[7] = *c;
+		} else if (col == 3){
+			a[8] = *c;
+		}
+	}
+	} else matrix(a,c);
 
 	return a;
 }
 
 int main(){
-	
 	system("clear");
-	
 	char mat[3][3] = {{'#','#','#'},
-			  {'#','#','#'},
-		       	  {'#','#','#'}}; // Blank tab
+										{'#','#','#'},
+										{'#','#','#'}}; // Blank tab
 	char c = 'o';
 	char g = 'x';
-	
 	int gameover = 0;
 		
 	while (gameover != 1){
@@ -104,17 +101,15 @@ int main(){
 			printf("The winner is: %c", c);
 			exit(0);
 		}
-		matrice(&mat[0][0], &c);
+		matrix(&mat[0][0], &c);
 		if (g == 'x'){
 			g = 'o';
 		} else g = 'x';
 		print_mat(mat);	
-		logica(&mat[0][0], &c, &gameover);
+		logic(&mat[0][0], &c, &gameover);
 	}
-	
 	if (gameover == 1){
 		printf("The winner is: %c", c);
 	}
-	
 	return 0;
 }
