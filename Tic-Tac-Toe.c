@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+//Easy tic tac toe for sus
 
 void print_mat(char a[3][3]){ // Print of the table
 	for (int i = 0 ; i < 3 ; i++){
