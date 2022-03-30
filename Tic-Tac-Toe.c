@@ -11,6 +11,11 @@ void print_mat(char a[3][3]){ // Print of the table
 	}
 }
 
+int check(){ //work in progress function to not make characters overlap
+
+	return 0;
+}
+
 void logic(char* a, char *c, int *gameover){
 	
 	// Horizontal win
