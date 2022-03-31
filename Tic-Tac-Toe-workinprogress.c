@@ -38,7 +38,7 @@ void logic(char* a, char *c, int *gameover){
 	}
 } 
 
-int check(char mat){ //work in progress function to not make characters overlap
+int check(char mat){ //don't know why but it just cause a little bug.
 
 	if (mat == '#'){
 		return 1;
